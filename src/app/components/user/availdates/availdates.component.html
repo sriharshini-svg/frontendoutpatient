@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="container" style="padding-top: 50px; margin-bottom: 7.8%;">
+   <div class="row justify-content-center">
+      <div class="col-md-12">
+        <h2 style="text-align: center;"><u>Doctors available dates</u></h2>
+        <table class="table table-bordered table-striped">
+            <thead  class="thead-light">
+              <tr style="text-align: center;">
+                <th scope="col">S.no</th>
+                <th scope="col">Name</th>
+                <th scope="col" style="width:40%">Specilization</th>
+                <th scope="col">From Date</th>
+                <th scope="col">To Date</th>
+                <th scope="col">OP Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let doc of doctorList; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>Dr. {{doc.doctor.doctorName}}</td>
+                <td>{{doc.doctor.speciality}}</td>
+                <td>{{doc.fromDate}}</td>
+                <td>{{doc.endDate}}</td>
+                <td>&#8377; {{doc.doctor.chargedPerVisit}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+</div>
+<app-footer></app-footer>

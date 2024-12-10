@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container" style="padding-top: 50px; margin-bottom: 7.8%;">
+    <div class="row">
+       <div class="col-md-12">
+        <h2 style="text-align: center;"><u>List of Appoinments</u></h2>
+         <table class="table table-bordered table-striped">
+             <thead  class="thead-light">
+               <tr style="text-align: center;">
+                 <th scope="col">Appointment Id</th>
+                 <th scope="col">Appointment Date</th>
+                 
+                 <th scope="col">Patient name</th>
+                 <th scope="col">Doctor</th>
+                 <th scope="col">Remark</th>
+                 <th scope="col">Status</th>
+                 <!-- <th scope="col">Action</th> -->
+               </tr>
+             </thead>
+             <tbody>
+               <tr *ngFor="let doc of bookingsList; let i = index">
+                <ng-container *ngIf="doc.doctor == userdata.doctorId">
+                 <td>{{doc.appointmentId}}</td>
+                 <td>{{doc.appointmentDate}}</td>
+                 <td>{{getPatient(doc.patient)}}</td>
+                 <td>Dr. {{getDoctor(doc.doctor)}}</td>
+                 <td>{{doc.remark}}</td>
+                 <td><span style="color: green;">{{doc.appointmentStatus}}</span></td>
+                 <!-- <td>&#8377;{{doc.chargedPerVisit}}</td> -->
+                 <!-- <td><button class="btn btn-danger btn-md">Remove</button></td> -->
+                </ng-container>
+               </tr>
+             </tbody>
+           </table>
+       </div>
+     </div>
+ </div>
+ <app-footer></app-footer>

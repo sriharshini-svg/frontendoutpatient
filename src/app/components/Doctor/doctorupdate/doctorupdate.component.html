@@ -1,0 +1,122 @@
+<app-header></app-header>
+<section class="vh-50">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xxl-8 offset-xl-1">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+          </div>
+          <div class="container mt-5">
+            <h3 class="text-center"><u>Update Profile</u></h3>
+            <div class="form-group">
+              <label for="name"><b class="text-danger">*</b>Name:</label>
+              <input type="text" class="form-control" id="name" name="name"
+                [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }" formControlName="fullname" />
+              @if (submitted && f['fullname'].errors) {
+              <div class="invalid-feedback">
+                @if (f['fullname'].errors['required']) {
+                <div>Fullname is required</div>
+                }
+              </div>
+              }
+            </div>
+            <div class="form-group">
+              <label for="email"><b class="text-danger">*</b>Username:</label>
+              <input type="text" class="form-control" id="username" name="username"
+                [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" formControlName="username">
+              @if (submitted && f['username'].errors) {
+              <div class="invalid-feedback">
+                @if (f['username'].errors['required']) {
+                <div>Username is required</div>
+                }
+              </div>
+              }
+            </div>
+            <div class="form-group">
+              <label for="email"><b class="text-danger">*</b>Email:</label>
+              <input type="email" class="form-control" id="email" name="email"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" formControlName="email">
+              @if (submitted && f['email'].errors) {
+              <div class="invalid-feedback">
+                @if (f['email'].errors['required']) {
+                <div>Email is required</div>
+                }
+              </div>
+              }
+            </div>
+            <div class="form-group">
+              <label for="password"><b class="text-danger">*</b>Password:</label>
+              <input type="password" class="form-control" id="password" name="password"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" formControlName="password">
+              @if (submitted && f['password'].errors) {
+              <div class="invalid-feedback">
+                @if (f['password'].errors['required']) {
+                <div>Password is required</div>
+                } @if (f['password'].errors['minlength']) {
+                <div>Password must be at least 6 characters</div>
+                } @if (f['password'].errors['maxlength']) {
+                <div>Username must not exceed 40 characters</div>
+                }
+              </div>
+              }
+            </div>
+            <div class="form-group">
+              <label for="specialization"><b class="text-danger">*</b>Specialization:</label>
+              <input type="text" class="form-control" id="specialization" name="specialization"
+                [ngClass]="{ 'is-invalid': submitted && f['specialization'].errors }" formControlName="specialization">
+              @if (submitted && f['specialization'].errors) {
+              <div class="invalid-feedback">
+                @if (f['specialization'].errors['required']) {
+                <div>Specialization is required</div>
+                }
+              </div>
+              }
+            </div>
+            <div class="form-group">
+              <label for="experience"><b class="text-danger">*</b>Experience (in years):</label>
+              <input type="number" class="form-control" id="experience" name="experience"
+                [ngClass]="{ 'is-invalid': submitted && f['experience'].errors }" formControlName="experience">
+              @if (submitted && f['experience'].errors) {
+              <div class="invalid-feedback">
+                @if (f['experience'].errors['required']) {
+                <div>Experience is required</div>
+                }
+              </div>
+              }
+            </div>
+            <div class="form-group">
+              <label for="previously_worked_place"><b class="text-danger">*</b>Previously Worked Place:</label>
+              <input type="text" class="form-control" id="previously_worked_place" name="previously_worked_place"
+                [ngClass]="{ 'is-invalid': submitted && f['place'].errors}" formControlName="place">
+              @if (submitted && f['place'].errors) {
+              <div class="invalid-feedback">
+                @if (f['place'].errors['required']) {
+                <div>worked-place is required</div>
+                }
+              </div>
+              }
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select class="form-control" id="gender" name="gender" [ngClass]="{ 'is-invalid': submitted && f['gender'].errors}" formControlName="gender">
+
+                <option value="male" selected>Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              @if (submitted && f['gender'].errors) {
+                <div class="invalid-feedback">
+                  @if (f['gender'].errors['required']) {
+                  <div>worked-place is required</div>
+                  }
+                </div>
+                }
+            </div>
+            <button type="submit" id="btn" class="btn btn-primary btn-block" style="margin-top: 15px;"> Update </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="container" id="slotform">
+    <h2 class="textual"><i class="fa fa-user-md"></i><b> Add Your Available Slots </b></h2>
+    <small style="color:rgb(179, 11, 11); font-weight: bold; margin-left: 15%;">Based on your slot availability, patients can able to book appointments</small>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+      <h2 style="text-align: center;"><u>Available dates</u></h2>
+        <div class="form-group">
+          <div class="form-group">
+            <label for="email"><b class="text-danger">*</b>DoctorId:</label>
+            <input type="text" class="form-control" id="username" name="username"
+              [ngClass]="{ 'is-invalid': submitted && f['doctorId'].errors }" formControlName="doctorId">
+            @if (submitted && f['doctorId'].errors) {
+            <div class="invalid-feedback">
+              @if (f['doctorId'].errors['required']) {
+              <div>Username is required</div>
+              }
+            </div>
+            }
+          </div>
+            <label for="date">From : <b class="text-danger">*</b></label>
+            <input type="date" class="form-control" [min]="todayDate" placeholder="enter available date" name="date" formControlName="fromDate" [ngClass]="{ 'is-invalid': submitted && f['fromDate'].errors }">
+            @if (submitted && f['fromDate'].errors) {
+                <div class="invalid-feedback">
+                  @if (f['fromDate'].errors['required']) {
+                  <div>Please select from date</div>
+                  }
+                </div>
+                }
+        </div>
+        <div class="form-group">
+          <label for="date">To : <b class="text-danger">*</b></label>
+          <input type="date" class="form-control" [min]="todayDate" placeholder="enter available date" name="date" formControlName="endDate" [ngClass]="{ 'is-invalid': submitted && f['endDate'].errors }">
+          @if (submitted && f['endDate'].errors) {
+              <div class="invalid-feedback">
+                @if (f['endDate'].errors['required']) {
+                <div>Please select to date</div>
+                }
+              </div>
+              }
+      </div>
+
+      <button style="margin-top: 15px;" type="submit" class="btn registerbtn"><i class="fa fa-plus"></i>&nbsp; Add Slot</button>
+    </form>
+  </div>
+<app-footer></app-footer>

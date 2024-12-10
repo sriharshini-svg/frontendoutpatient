@@ -1,0 +1,91 @@
+<div class="container" id="slotform">
+  <div class="divider d-flex align-items-center my-4 justify-content-center" style="font-size: 2rem;">
+    <p class="text-center fw-bold mx-3 mb-0" style="justify-content: center;">Registration form</p>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="doctorname"> Full Name : <b class="text-danger">*</b></label>
+      <input type="text" class="form-control" placeholder="enter your name" name="username"
+        [ngClass]="{ 'is-invalid': submitted && f['userfullname'].errors }" formControlName="userfullname">
+      @if (submitted && f['userfullname'].errors) {
+      <div class="invalid-feedback">
+        @if (f['userfullname'].errors['required']) {
+        <div>Please enter your full name</div>
+        }
+      </div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="doctorname"> Username : <b class="text-danger">*</b></label>
+      <input type="text" class="form-control" placeholder="enter your name" name="doctorname"
+        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" formControlName="username">
+      @if (submitted && f['username'].errors) {
+      <div class="invalid-feedback">
+        @if (f['username'].errors['required']) {
+        <div>Please enter your username</div>
+        }
+      </div>
+      }
+    </div>
+    
+    <div class="form-group">
+      <label for="email"> Email : <b class="text-danger">*</b></label>
+      <input type="email" class="form-control" id="email" placeholder="enter email address" name="email" formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+      @if (submitted && f['email'].errors) {
+      <div class="invalid-feedback">
+        @if (f['email'].errors['required']) {
+        <div>Please enter email</div>
+        }
+      </div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="password">Password :<b class="text-danger">*</b></label>
+      <input type="password" id="password" class="form-control" placeholder="Enter password" formControlName="password"
+        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+      @if (submitted && f['password'].errors) {
+      <div class="invalid-feedback">
+        @if (f['password'].errors['required']) {
+        <div>Password is required</div>
+        } @if (f['password'].errors['minlength']) {
+        <div>Password must be at least 6 characters</div>
+        } @if (f['password'].errors['maxlength']) {
+        <div>Username must not exceed 40 characters</div>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="Contact">Contact :<b class="text-danger">*</b></label>
+      <input type="number" id="contact" class="form-control" placeholder="Enter number" formControlName="contact"
+        [ngClass]="{ 'is-invalid': submitted && f['contact'].errors }">
+      @if (submitted && f['contact'].errors) {
+      <div class="invalid-feedback">
+        @if (f['contact'].errors['required']) {
+        <div>Contact is required</div>
+        }
+      </div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender :<b class="text-danger">*</b></label>
+      <select class="form-control" id="sel1" name="gender" formControlName="gender"
+        [ngClass]="{ 'is-invalid': submitted && f['gender'].errors }">
+        <option selected>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      @if (submitted && f['gender'].errors) {
+      <div class="invalid-feedback">
+        @if (f['gender'].errors['required']) {
+        <div>Please select type</div>
+        }
+      </div>
+      }
+    </div>
+    <button style="margin-top: 15px;" type="submit" class="btn registerbtn"><i class="fa fa-plus"></i>&nbsp; Register</button>
+  </form>
+</div>

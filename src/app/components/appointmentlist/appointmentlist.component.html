@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="container" style="padding-top: 50px; margin-bottom: 7.8%;">
+    <div class="row">
+       <div class="col-md-12">
+         <table class="table table-bordered">
+             <thead  class="thead-light">
+               <tr style="text-align: center;">
+                 <th scope="col">ID</th>
+                 <th scope="col">Name</th>
+                 <th scope="col">Gender</th>
+                 <th scope="col">Problem</th>
+                 <th scope="col">Case</th>
+                 <th scope="col">Doctor Name</th>
+                 <th scope="col">Action</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr *ngFor="let doc of doctorList; let i = index">
+                 <th scope="row">{{i+1}}</th>
+                 <td>{{doc.firstname}} {{doc.lastname}}</td>
+                 <td>{{doc.gender}}</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td><button class="btn btn-success btn-md ">Accept</button> &nbsp;<button class="btn btn-danger btn-md ">Reject</button></td>
+               </tr>
+             </tbody>
+           </table>
+       </div>
+     </div>
+ </div>
+<app-footer></app-footer>

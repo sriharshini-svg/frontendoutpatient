@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="container" style="padding-top: 50px; margin-bottom: 7.8%;">
+   <div class="row justify-content-center">
+      <div class="col-md-12">
+        <h2 style="text-align: center;"><u>Doctors List</u></h2>
+        <table class="table table-bordered table-striped">
+            <thead  class="thead-light">
+              <tr style="text-align: center;">
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col" style="width:40%">Specilization</th>
+                <th scope="col">OP Fee</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let doc of doctorList; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{doc.doctorName}}</td>
+                <td>{{doc.email}}</td>
+                <td>{{doc.mobileNo}}</td>
+                <td>{{doc.speciality}}</td>
+                <td>&#8377; {{doc.chargedPerVisit}}</td>
+                <td><button class="btn btn-success btn-sm " (click)="appointment(doc.doctorId)">Book Appointment</button></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,120 @@
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar .navbar-brand,
+.navbar a.btn {
+    height: 75px;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+#log{
+	color: black;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 10px;
+    font-size: 18px;
+    outline: none;
+    margin: 10px;
+ }
+#log:hover
+{
+	background: linear-gradient(to bottom, #00ccff 0%, #3399ff 100%);
+	color: #fff;
+    border: none;
+    border-radius: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* th{
+   text-align: center; 
+} */
+thead{
+    background-color: #b7f0f1;
+  }
+  table, td{
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+  }
+  table, td, tr{
+    border: 1px solid rgb(163, 161, 161);
+    font-family: serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: large;
+  }
+  
+  th{
+    text-transform: uppercase;
+    color: rgb(12, 0, 0);
+    font-family: Helvetica;
+    font-style: italic;
+    font-size: normal;
+    text-align: center; 
+  }
+  td{
+    text-transform:none;
+  }
